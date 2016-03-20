@@ -1,4 +1,4 @@
-class DMaster < ActiveRecord::Base
+class Dmaster < ActiveRecord::Base
   belongs_to :campaign
 
   validates :name, presence: true
