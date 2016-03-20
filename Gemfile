@@ -38,6 +38,7 @@ group :development, :test do
 
   # Library that generates fake data
   gem 'faker'
+  gem 'populator'
 end
 
 group :development do
