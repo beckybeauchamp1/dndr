@@ -11,7 +11,8 @@ Campaign.destroy_all
 
 10.times do |index|
   Campaign.create!(name: Faker::Company.name,
-                summary: Faker::Lorem.paragraph)
+                summary: Faker::Company.catch_phrase)
+  Dmaster.create!(name: Faker::Name.name, campaign_id: index+1)
 end
 
-p "Created #{Campaign.count} campaigns"
+p "Created #{Campaign.count} campaigns and #{Dmaster.count} dungeon masters."
