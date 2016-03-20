@@ -24,6 +24,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.text :ideals
       t.text :bonds
       t.text :flaws
+      t.datetime :created_at
       t.datetime :updated_at
       t.belongs_to :campaign, index: true, foreign_key: true
     end
