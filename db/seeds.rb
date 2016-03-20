@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Character.destroy_all
+Dmaster.destroy_all
+Campaign.destroy_all
+
+tartan = Campaign.new (name: Faker::Company.name, summary: Faker::Lorem.paragraph)
+eagle = Campaign.new (name: Faker::Company.name, summary: Faker::Lorem.paragraph)
