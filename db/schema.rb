@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20160320001934) do
     t.text     "ideals"
     t.text     "bonds"
     t.text     "flaws"
+    t.integer  "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "campaign_id"
   end
 
   add_index "characters", ["campaign_id"], name: "index_characters_on_campaign_id", using: :btree
