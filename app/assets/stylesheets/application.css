@@ -13,3 +13,96 @@
  *= require_tree .
  *= require_self
  */
+ * {
+   line-height: 150%;
+ }
+
+ body {
+   background-color: #e9ece5;
+ }
+
+ #appBox {
+   background-color: #c0dfd9;
+   margin: 1em auto;
+   padding: 2em;
+   padding-top: none;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #scribble {
+   text-align: center;
+   font-size: 4em;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: "Lobster", "Helvetica", sans-serif;
+ }
+
+ #back {
+   text-align: center;
+   font-size: 1.25em;
+ }
+
+ #campaignName {
+   font-size: 1.5em;
+ }
+
+ .emphasis {
+   font-weight: bold;
+ }
+
+ input[type=text] {
+   margin-top: 10px;
+   padding:5px;
+   border:2px solid #ccc;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+ }
+
+ input[type=text]:focus {
+   border-color:#333;
+ }
+
+ textarea {
+   margin-top: 10px;
+   padding:5px;
+   border:2px solid #ccc;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+ }
+
+ textarea:focus {
+   border-color:#333;
+ }
+
+ input[type=submit] {
+     margin-top: 10px;
+     padding:5px 15px;
+     background:#ccc;
+     border:0 none;
+     cursor:pointer;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ button {
+   margin-top: 10px;
+   padding:5px 15px;
+   background:#ccc;
+   border:0 none;
+   cursor:pointer;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ button > a {
+   color: #333;
+ }
+
+ button > a:hover {
+   text-decoration: none;
+ }
