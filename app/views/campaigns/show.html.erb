@@ -11,11 +11,11 @@
 <% end %>
 
 <h3>Dungeon Master</h3>
-  <h4><%= @campaign.dmaster.name %></h4>
+  <h4 class="emphasis"><%= link_to "#{@campaign.dmaster.name}", campaign_dmaster_url(@campaign, @campaign.dmaster) %></h4>
 
 <h3>Characters <%= link_to "(+)", new_campaign_character_url( @campaign ) %></h3>
   <% @campaign.characters.each do |character| %>
-      <h4 class="emphasis"><%= character.char_name %></h4>
+      <h4 class="emphasis"><%= link_to "#{character.char_name}", campaign_character_url( @campaign, character ) %></h4>
       <h5><%= character.player_name %></h5>
       <div><button class="makeButton"><%= link_to "Edit Character", edit_campaign_character_url( @campaign, character ) %></button></div>
       <div><%= form_for [@campaign, character], method: :delete do |f| %>

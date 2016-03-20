@@ -1,9 +1,11 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.all.order(:id)
+    @campaign = Campaign.find(params[:campaign_id])
+    @characters = @campaign.characters.all.order(:id)
   end
 
   def show
+    @campaign = Campaign.find(params[:campaign_id])
     @character = Character.find(params[:id])
   end
 
