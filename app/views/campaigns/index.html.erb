@@ -1,0 +1,8 @@
+<h1>Campaigns <%= link_to "(+)", new_campaign_path %></h1>
+
+  <% @campaigns.each do |campaign| %>
+    <span class="emphasis" id="campaignName"><%= link_to campaign.name, campaign %></span>
+    <div><span class="emphasis">Updated At: </span><%= campaign.updated_at %></div>
+    <div><%= campaign.summary %></div>
+    </br>
+  <% end %>
