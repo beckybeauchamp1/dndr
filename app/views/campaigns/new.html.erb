@@ -1,0 +1,12 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
+
+<h2>Make a New Campaign:</h2>
+<%= form_for @campaign do |f| %>
+  <div><%= f.label :title, "Campaign Name:" %></div>
+  <div><%= f.text_field :name %></div>
+  </br>
+  <div><%= f.label :title, "Short Summary:" %></div>
+  <div><%= f.text_area :summary, :cols => "24", :rows => "4"  %></div>
+
+  <div><%= f.submit "Create" %></div>
+<% end %>
