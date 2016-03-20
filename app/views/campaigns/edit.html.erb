@@ -1,0 +1,16 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path %></div>
+
+<h2>Edit Campaign:</h2>
+<%= form_for @campaign do |f| %>
+  <div><%= f.label :title, "Campaign Name:" %></div>
+  <div><%= f.text_field :name %></div>
+  </br>
+  <div><%= f.label :title, "Short Summary:" %></div>
+  <div><%= f.text_area :summary, :cols => "24", :rows => "4"  %></div>
+
+  <div><%= f.submit "Edit" %></div>
+<% end %>
+
+<%= form_for @campaign, method: :delete do |f| %>
+  <%= f.submit "Delete Entire Campaign", class: "delete" %>
+<% end %>
