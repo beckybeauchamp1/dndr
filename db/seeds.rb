@@ -9,7 +9,7 @@ Character.destroy_all
 Dmaster.destroy_all
 Campaign.destroy_all
 
-10.times do |index|
+5.times do |index|
   Campaign.create!(name: Faker::Company.name,
                   summary: Faker::Company.catch_phrase)
   Dmaster.create!(name: Faker::Name.name,
@@ -24,11 +24,11 @@ Campaign.destroy_all
     alignment: "Chaotic Good",
     archetype: nil,
     xp: 0,
-    hp_max: Faker::Number.between(1, 12),
-    hp_current: 12,
-    armor_class: 16,
+    hp_max: 12,
+    hp_current: Faker::Number.between(1, 12),
+    armor_class: Faker::Number.between(10, 16),
     initiative: 2,
-    speed: 30,
+    speed: Faker::Number.between(25, 35),
     prof_bonus: 2,
     inspiration: 0,
     languages: nil,
@@ -43,3 +43,9 @@ Campaign.destroy_all
 end
 
 p "Created #{Campaign.count} campaigns, #{Dmaster.count} dungeon masters, and #{Character.count} characters."
+
+# 5.times do |index|
+# end
+#
+# Campaign.find(1).characters
+# Campaign.find(1).dmaster
