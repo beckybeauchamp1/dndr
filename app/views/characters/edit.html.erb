@@ -50,3 +50,7 @@
   <div><%= f.text_area :flaws, :cols => "24", :rows => "4" %></div>
   <div><%= f.submit "Edit" %></div>
 <% end %>
+
+<div><%= form_for [@campaign, @character], method: :delete do |f| %>
+  <%= f.submit "Delete Character", class: "delete" %>
+<% end %></div>
