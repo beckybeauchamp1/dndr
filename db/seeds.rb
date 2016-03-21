@@ -42,6 +42,22 @@ Campaign.destroy_all
   )
 end
 
+5.times do |index|
+  camp = Campaign.create
+  dm = DM.create
+  5.times do
+    camp.characters.create
+  end
+  camp.dm = dm
+end
+
+32.times do |index|
+  char = Caharcter.create
+  char.camp = Campaign.sample
+end
+
+end
+
 4.times do |index|
   Campaign.find(1).characters.create!(
     player_name: Faker::Name.name,
