@@ -59,23 +59,32 @@
  }
 
  input[type=text] {
-   margin-top: 10px;
    padding:5px;
-   border:2px solid #ccc;
+   border:2px solid #bbb;
    -webkit-border-radius: 5px;
    border-radius: 5px;
+   margin-bottom: 1em;
  }
 
  input[type=text]:focus {
    border-color:#333;
  }
 
+ select {
+   border:2px solid #bbb;
+   margin-bottom: 1em;
+ }
+
+ select:focus {
+   border-color:#333;
+ }
+
  textarea {
-   margin-top: 10px;
    padding:5px;
-   border:2px solid #ccc;
+   border:2px solid #bbb;
    -webkit-border-radius: 5px;
    border-radius: 5px;
+   margin-bottom: 1em;
  }
 
  textarea:focus {
