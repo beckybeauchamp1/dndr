@@ -9,12 +9,13 @@ Character.destroy_all
 Dmaster.destroy_all
 Campaign.destroy_all
 
-5.times do |index|
-  Campaign.create!(name: Faker::Company.name,
+5.times do
+  campaign = Campaign.create!(name: Faker::Company.name,
                   summary: Faker::Company.catch_phrase)
   Dmaster.create!(name: Faker::Name.name,
-                  campaign_id: index+1)
-  Character.create!(
+                  campaign_id: campaign)
+  5.times do
+    campaign.characters.create!(
     player_name: Faker::Name.name,
     char_name: Faker::Superhero.name,
     klass: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Wizard', 'Monk', 'Paladin', 'Ranger', 'Sorcerer', 'Rogue', 'Warlock'].sample,
@@ -38,170 +39,169 @@ Campaign.destroy_all
     ideals: nil,
     bonds: nil,
     flaws: nil,
-    campaign: Campaign.sample
-  )
-end
-
-5.times do |index|
-  camp = Campaign.create
-  dm = DM.create
-  5.times do
-    camp.characters.create
+    )
   end
-  camp.dm = dm
 end
+#
+# 5.times do |index|
+#   camp = Campaign.create
+#   dm = DM.create
+#   5.times do
+#     camp.characters.create
+#   end
+#   camp.dm = dm
+# end
+#
+# 32.times do |index|
+#   char = Caharcter.create
+#   char.camp = Campaign.sample
+# end
 
-32.times do |index|
-  char = Caharcter.create
-  char.camp = Campaign.sample
-end
 
-end
-
-4.times do |index|
-  Campaign.find(1).characters.create!(
-    player_name: Faker::Name.name,
-    char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
-    level: 1,
-    race: Faker::StarWars.specie,
-    background: Faker::StarWars.planet,
-    alignment: "Chaotic Good",
-    archetype: nil,
-    xp: 0,
-    hp_max: 12,
-    hp_current: Faker::Number.between(1, 12),
-    armor_class: Faker::Number.between(10, 16),
-    initiative: 2,
-    speed: Faker::Number.between(25, 35),
-    prof_bonus: 2,
-    inspiration: 0,
-    languages: nil,
-    features: nil,
-    equipment: nil,
-    personality: nil,
-    ideals: nil,
-    bonds: nil,
-    flaws: nil,
-    campaign_id: 1
-  )
-end
-
-4.times do |index|
-  Campaign.find(2).characters.create!(
-    player_name: Faker::Name.name,
-    char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
-    level: 1,
-    race: Faker::StarWars.specie,
-    background: Faker::StarWars.planet,
-    alignment: "Chaotic Good",
-    archetype: nil,
-    xp: 0,
-    hp_max: 12,
-    hp_current: Faker::Number.between(1, 12),
-    armor_class: Faker::Number.between(10, 16),
-    initiative: 2,
-    speed: Faker::Number.between(25, 35),
-    prof_bonus: 2,
-    inspiration: 0,
-    languages: nil,
-    features: nil,
-    equipment: nil,
-    personality: nil,
-    ideals: nil,
-    bonds: nil,
-    flaws: nil,
-    campaign_id: 2
-  )
-end
-
-4.times do |index|
-  Campaign.find(3).characters.create!(
-    player_name: Faker::Name.name,
-    char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
-    level: 1,
-    race: Faker::StarWars.specie,
-    background: Faker::StarWars.planet,
-    alignment: "Chaotic Good",
-    archetype: nil,
-    xp: 0,
-    hp_max: 12,
-    hp_current: Faker::Number.between(1, 12),
-    armor_class: Faker::Number.between(10, 16),
-    initiative: 2,
-    speed: Faker::Number.between(25, 35),
-    prof_bonus: 2,
-    inspiration: 0,
-    languages: nil,
-    features: nil,
-    equipment: nil,
-    personality: nil,
-    ideals: nil,
-    bonds: nil,
-    flaws: nil,
-    campaign_id: 3
-  )
-end
-
-4.times do |index|
-  Campaign.find(4).characters.create!(
-    player_name: Faker::Name.name,
-    char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
-    level: 1,
-    race: Faker::StarWars.specie,
-    background: Faker::StarWars.planet,
-    alignment: "Chaotic Good",
-    archetype: nil,
-    xp: 0,
-    hp_max: 12,
-    hp_current: Faker::Number.between(1, 12),
-    armor_class: Faker::Number.between(10, 16),
-    initiative: 2,
-    speed: Faker::Number.between(25, 35),
-    prof_bonus: 2,
-    inspiration: 0,
-    languages: nil,
-    features: nil,
-    equipment: nil,
-    personality: nil,
-    ideals: nil,
-    bonds: nil,
-    flaws: nil,
-    campaign_id: 4
-  )
-end
-
-4.times do |index|
-  Campaign.find(5).characters.create!(
-    player_name: Faker::Name.name,
-    char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
-    level: 1,
-    race: Faker::StarWars.specie,
-    background: Faker::StarWars.planet,
-    alignment: "Chaotic Good",
-    archetype: nil,
-    xp: 0,
-    hp_max: 12,
-    hp_current: Faker::Number.between(1, 12),
-    armor_class: Faker::Number.between(10, 16),
-    initiative: 2,
-    speed: Faker::Number.between(25, 35),
-    prof_bonus: 2,
-    inspiration: 0,
-    languages: nil,
-    features: nil,
-    equipment: nil,
-    personality: nil,
-    ideals: nil,
-    bonds: nil,
-    flaws: nil,
-    campaign_id: 5
-  )
-end
+# 4.times do |index|
+#   Campaign.find(1).characters.create!(
+#     player_name: Faker::Name.name,
+#     char_name: Faker::Superhero.name,
+#     klass: Faker::Company.profession,
+#     level: 1,
+#     race: Faker::StarWars.specie,
+#     background: Faker::StarWars.planet,
+#     alignment: "Chaotic Good",
+#     archetype: nil,
+#     xp: 0,
+#     hp_max: 12,
+#     hp_current: Faker::Number.between(1, 12),
+#     armor_class: Faker::Number.between(10, 16),
+#     initiative: 2,
+#     speed: Faker::Number.between(25, 35),
+#     prof_bonus: 2,
+#     inspiration: 0,
+#     languages: nil,
+#     features: nil,
+#     equipment: nil,
+#     personality: nil,
+#     ideals: nil,
+#     bonds: nil,
+#     flaws: nil,
+#     campaign_id: 1
+#   )
+# end
+#
+# 4.times do |index|
+#   Campaign.find(2).characters.create!(
+#     player_name: Faker::Name.name,
+#     char_name: Faker::Superhero.name,
+#     klass: Faker::Company.profession,
+#     level: 1,
+#     race: Faker::StarWars.specie,
+#     background: Faker::StarWars.planet,
+#     alignment: "Chaotic Good",
+#     archetype: nil,
+#     xp: 0,
+#     hp_max: 12,
+#     hp_current: Faker::Number.between(1, 12),
+#     armor_class: Faker::Number.between(10, 16),
+#     initiative: 2,
+#     speed: Faker::Number.between(25, 35),
+#     prof_bonus: 2,
+#     inspiration: 0,
+#     languages: nil,
+#     features: nil,
+#     equipment: nil,
+#     personality: nil,
+#     ideals: nil,
+#     bonds: nil,
+#     flaws: nil,
+#     campaign_id: 2
+#   )
+# end
+#
+# 4.times do |index|
+#   Campaign.find(3).characters.create!(
+#     player_name: Faker::Name.name,
+#     char_name: Faker::Superhero.name,
+#     klass: Faker::Company.profession,
+#     level: 1,
+#     race: Faker::StarWars.specie,
+#     background: Faker::StarWars.planet,
+#     alignment: "Chaotic Good",
+#     archetype: nil,
+#     xp: 0,
+#     hp_max: 12,
+#     hp_current: Faker::Number.between(1, 12),
+#     armor_class: Faker::Number.between(10, 16),
+#     initiative: 2,
+#     speed: Faker::Number.between(25, 35),
+#     prof_bonus: 2,
+#     inspiration: 0,
+#     languages: nil,
+#     features: nil,
+#     equipment: nil,
+#     personality: nil,
+#     ideals: nil,
+#     bonds: nil,
+#     flaws: nil,
+#     campaign_id: 3
+#   )
+# end
+#
+# 4.times do |index|
+#   Campaign.find(4).characters.create!(
+#     player_name: Faker::Name.name,
+#     char_name: Faker::Superhero.name,
+#     klass: Faker::Company.profession,
+#     level: 1,
+#     race: Faker::StarWars.specie,
+#     background: Faker::StarWars.planet,
+#     alignment: "Chaotic Good",
+#     archetype: nil,
+#     xp: 0,
+#     hp_max: 12,
+#     hp_current: Faker::Number.between(1, 12),
+#     armor_class: Faker::Number.between(10, 16),
+#     initiative: 2,
+#     speed: Faker::Number.between(25, 35),
+#     prof_bonus: 2,
+#     inspiration: 0,
+#     languages: nil,
+#     features: nil,
+#     equipment: nil,
+#     personality: nil,
+#     ideals: nil,
+#     bonds: nil,
+#     flaws: nil,
+#     campaign_id: 4
+#   )
+# end
+#
+# 4.times do |index|
+#   Campaign.find(5).characters.create!(
+#     player_name: Faker::Name.name,
+#     char_name: Faker::Superhero.name,
+#     klass: Faker::Company.profession,
+#     level: 1,
+#     race: Faker::StarWars.specie,
+#     background: Faker::StarWars.planet,
+#     alignment: "Chaotic Good",
+#     archetype: nil,
+#     xp: 0,
+#     hp_max: 12,
+#     hp_current: Faker::Number.between(1, 12),
+#     armor_class: Faker::Number.between(10, 16),
+#     initiative: 2,
+#     speed: Faker::Number.between(25, 35),
+#     prof_bonus: 2,
+#     inspiration: 0,
+#     languages: nil,
+#     features: nil,
+#     equipment: nil,
+#     personality: nil,
+#     ideals: nil,
+#     bonds: nil,
+#     flaws: nil,
+#     campaign_id: 5
+#   )
+# end
 
 p "Created #{Campaign.count} campaigns, #{Dmaster.count} dungeon masters, and #{Character.count} characters."
 
