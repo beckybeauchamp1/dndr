@@ -17,7 +17,7 @@ Campaign.destroy_all
   Character.create!(
     player_name: Faker::Name.name,
     char_name: Faker::Superhero.name,
-    klass: Faker::Company.profession,
+    klass: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Wizard', 'Monk', 'Paladin', 'Ranger', 'Sorcerer', 'Rogue', 'Warlock'].sample,
     level: 1,
     race: Faker::StarWars.specie,
     background: Faker::StarWars.planet,
@@ -38,7 +38,7 @@ Campaign.destroy_all
     ideals: nil,
     bonds: nil,
     flaws: nil,
-    campaign_id: index+1
+    campaign: Campaign.sample
   )
 end
 
