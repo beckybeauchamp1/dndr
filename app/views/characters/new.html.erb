@@ -1,0 +1,29 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
+
+<h2>Make a New Character:</h2>
+<%= form_for [@campaign, @character] do |f| %>
+  <div><span class="emphasis">Updated At: </span><%= @character.updated_at %></div>
+  <div><span class="emphasis">Player Name: </span><%= @character.player_name %></div>
+  <div><span class="emphasis">Class: </span><%= @character.klass.capitalize %></div>
+  <div><span class="emphasis">Level: </span><%= @character.level %></div>
+  <div><span class="emphasis">Race: </span><%= @character.race %></div>
+  <div><span class="emphasis">Background: </span><%= @character.background %></div>
+  <div><span class="emphasis">Alignment: </span><%= @character.alignment %></div>
+  <div><span class="emphasis">Archetype (Level 3+): </span><%= @character.archetype %></div>
+  <div><span class="emphasis">XP: </span><%= @character.xp %></div>
+  <div><span class="emphasis">Max HP: </span><%= @character.hp_max %></div>
+  <div><span class="emphasis">Current HP: </span><%= @character.hp_current %></div>
+  <div><span class="emphasis">Armor Class: </span><%= @character.armor_class %></div>
+  <div><span class="emphasis">Initiative: </span>+<%= @character.initiative %></div>
+  <div><span class="emphasis">Speed: </span><%= @character.speed %></div>
+  <div><span class="emphasis">Proficieny Bonus: </span>+<%= @character.prof_bonus %></div>
+  <div><span class="emphasis">Inspiration: </span>+<%= @character.inspiration %></div>
+  <div><span class="emphasis">Languages: </span><%= @character.languages %></div>
+  <div><span class="emphasis">Features: </span><%= @character.features %></div>
+  <div><span class="emphasis">Equipment: </span><%= @character.equipment %></div>
+  <div><span class="emphasis">Personality: </span><%= @character.personality %></div>
+  <div><span class="emphasis">Ideals: </span><%= @character.ideals %></div>
+  <div><span class="emphasis">Bonds: </span><%= @character.bonds %></div>
+  <div><span class="emphasis">Flaws: </span><%= @character.flaws %></div>
+  <div><%= f.submit "Create" %></div>
+<% end %>
