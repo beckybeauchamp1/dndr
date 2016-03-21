@@ -2,11 +2,10 @@ Character.destroy_all
 Dmaster.destroy_all
 Campaign.destroy_all
 
-5.times do
+5.times do |index|
   campaign = Campaign.create!(name: Faker::Company.name,
                   summary: Faker::Company.catch_phrase)
-  Dmaster.create!(name: Faker::Name.name,
-                  campaign_id: campaign)
+  Dmaster.create!(name: Faker::Name.name, campaign_id: index + 1)
   5.times do
     campaign.characters.create!(
     player_name: Faker::Name.name,
