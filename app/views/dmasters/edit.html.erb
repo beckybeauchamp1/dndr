@@ -1,0 +1,12 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
+<h2>Edit DM:</h2>
+<%= form_for [@campaign, @dmaster] do |f| %>
+  <div><%= f.label :name, "Name:" %></div>
+  <div><%= f.text_field :name %></div>
+
+  <div><%= f.submit "Edit" %></div>
+<% end %>
+
+<%= form_for [@campaign, @dmaster], method: :delete do |f| %>
+  <%= f.submit "Delete DM", class: "delete" %>
+<% end %>

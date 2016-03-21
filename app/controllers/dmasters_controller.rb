@@ -1,6 +1,7 @@
 class DmastersController < ApplicationController
   def show
-    @dmaster = Dmaster.find(params[:id])
+    @campaign = Campaign.find(params[:campaign_id])
+    @dmaster = @campaign.dmaster
   end
 
   def new
@@ -17,12 +18,12 @@ class DmastersController < ApplicationController
 
   def edit
     @campaign = Campaign.find(params[:campaign_id])
-    @dmaster = Dmaster.find(params[:id])
+    @dmaster = @campaign.dmaster
   end
 
   def update
     @campaign = Campaign.find(params[:campaign_id])
-    @dmaster = Dmaster.find(params[:id])
+    @dmaster = @campaign.dmaster
     @dmaster.update dmaster_params
 
     redirect_to campaign_path(@campaign)
@@ -30,7 +31,7 @@ class DmastersController < ApplicationController
 
   def destroy
     @campaign = Campaign.find(params[:campaign_id])
-    @dmaster = Dmaster.find(params[:id])
+    @dmaster = @campaign.dmaster
     @dmaster.destroy
 
     redirect_to campaign_path(@campaign)
