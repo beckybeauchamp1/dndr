@@ -1,0 +1,52 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
+
+<h2>Edit Character:</h2>
+<%= form_for [@campaign, @character] do |f| %>
+  <div><%= f.label :title, "Character Name:" %></div>
+  <div><%= f.text_field :char_name %></div>
+  <div><%= f.label :title, "Player Name:" %></div>
+  <div><%= f.text_field :player_name %></div>
+  <div><%= f.label :title, "Class:" %></div>
+  <div><%= f.text_field :klass %></div>
+  <div><%= f.label :title, "Level:" %></div>
+  <div><%= f.text_field :level %></div>
+  <div><%= f.label :title, "Race:" %></div>
+  <div><%= f.text_field :race %></div>
+  <div><%= f.label :title, "Background:" %></div>
+  <div><%= f.text_field :background %></div>
+  <div><%= f.label :title, "Alignment:" %></div>
+  <div><%= f.text_field :alignment %></div>
+  <div><%= f.label :title, "Archetype (Level 3+):" %></div>
+  <div><%= f.text_field :archetype %></div>
+  <div><%= f.label :title, "XP:" %></div>
+  <div><%= f.text_field :xp %></div>
+  <div><%= f.label :title, "Max HP:" %></div>
+  <div><%= f.text_field :hp_max %></div>
+  <div><%= f.label :title, "Current HP:" %></div>
+  <div><%= f.text_field :hp_current %></div>
+  <div><%= f.label :title, "Armor Class:" %></div>
+  <div><%= f.text_field :armor_class %></div>
+  <div><%= f.label :title, "Initiative:" %></div>
+  <div><%= f.text_field :initiative %></div>
+  <div><%= f.label :title, "Speed:" %></div>
+  <div><%= f.text_field :speed %></div>
+  <div><%= f.label :title, "Proficiency Bonus:" %></div>
+  <div><%= f.text_field :prof_bonus %></div>
+  <div><%= f.label :title, "Inspiration:" %></div>
+  <div><%= f.text_field :inspiration %></div>
+  <div><%= f.label :title, "Languages:" %></div>
+  <div><%= f.text_area :languages, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Feautures:" %></div>
+  <div><%= f.text_area :features, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Equipment:" %></div>
+  <div><%= f.text_area :equipment, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Personality:" %></div>
+  <div><%= f.text_area :personality, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Ideals:" %></div>
+  <div><%= f.text_area :ideals, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Bonds:" %></div>
+  <div><%= f.text_area :bonds, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Flaws:" %></div>
+  <div><%= f.text_area :flaws, :cols => "24", :rows => "4" %></div>
+  <div><%= f.submit "Edit" %></div>
+<% end %>
