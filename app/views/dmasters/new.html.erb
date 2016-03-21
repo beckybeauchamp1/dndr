@@ -1,0 +1,8 @@
+<div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
+
+<h2>Make a Dungeon Master:</h2>
+<%= form_for [@campaign, @dmaster] do |f| %>
+  <div><%= f.label :name, "Name:" %></div>
+  <div><%= f.text_field :name %></div>
+  <div><%= f.submit "Create" %></div>
+<% end %>

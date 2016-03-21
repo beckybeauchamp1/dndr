@@ -6,7 +6,8 @@ class DmastersController < ApplicationController
 
   def new
     @campaign = Campaign.find(params[:campaign_id])
-    @dmaster = Dmaster.new
+    @dmaster = Dmaster.create!
+    @campaign.dmaster = @dmaster
   end
 
   def create

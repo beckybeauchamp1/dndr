@@ -10,13 +10,13 @@
   <%= f.submit "Delete Entire Campaign", class: "delete" %>
 <% end %>
 
-<h3>Dungeon Master</h3>
-  <% if @campaign.dmaster %>
-  <h4 class="emphasis"><%= link_to "#{@campaign.dmaster.name}", campaign_dmaster_path(@campaign, @campaign.dmaster) %></h4>
-  <div><button class="makeButton"><%= link_to "Edit DM", edit_campaign_dmaster_path( @campaign, @campaign.dmaster ) %></button></div>
-  <% else %>
-    <h4>Add a DM!</h4>
-  <% end %>
+<% if @campaign.dmaster %>
+  <h3>Dungeon Master</h3>
+    <h4 class="emphasis"><%= link_to "#{@campaign.dmaster.name}", campaign_dmaster_path(@campaign, @campaign.dmaster) %></h4>
+    <div><button class="makeButton"><%= link_to "Edit DM", edit_campaign_dmaster_path( @campaign, @campaign.dmaster ) %></button></div>
+<% else %>
+  <h3>Dungeon Master<%= link_to "(+)", new_campaign_dmaster_path( @campaign ) %></h3>
+<% end %>
 
 <h3>Characters <%= link_to "(+)", new_campaign_character_path( @campaign ) %></h3>
   <% @campaign.characters.each do |character| %>
