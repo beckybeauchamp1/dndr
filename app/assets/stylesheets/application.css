@@ -124,6 +124,7 @@
  img {
    max-width: 20em;
    margin-bottom: 10px;
+   max-height: 20em;
  }
 
  .float {

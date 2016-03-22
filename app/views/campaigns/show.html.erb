@@ -18,7 +18,7 @@
 <% else %>
   <h3>Dungeon Master<%= link_to "(+)", new_campaign_dmaster_path( @campaign ) %></h3>
 <% end %>
-
+</br>
 <h3>Characters <%= link_to "(+)", new_campaign_character_path( @campaign ) %></h3>
   <% @campaign.characters.each do |character| %>
       <h4 class="emphasis"><%= link_to "#{character.char_name}", campaign_character_path( @campaign, character ) %></h4>
