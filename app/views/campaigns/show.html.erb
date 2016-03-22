@@ -19,21 +19,26 @@
   <h3>Dungeon Master<%= link_to "(+)", new_campaign_dmaster_path( @campaign ) %></h3>
 <% end %>
 </br>
-<h3>Characters <%= link_to "(+)", new_campaign_character_path( @campaign ) %></h3>
-  <% @campaign.characters.each do |character| %>
-      <h4 class="emphasis"><%= link_to "#{character.char_name}", campaign_character_path( @campaign, character ) %></h4>
-      <h5><%= character.player_name %></h5>
-      <div><button class="makeButton"><%= link_to "Edit Character", edit_campaign_character_path( @campaign, character ) %></button></div>
-      <div><%= form_for [@campaign, character], method: :delete do |f| %>
-        <%= f.submit "Delete Character", class: "delete" %>
-      <% end %></div>
-  <% end %>
-
-  <h3>Adventures <%= link_to "(+)", new_campaign_adventure_path( @campaign ) %></h3>
-    <% @campaign.adventures.each do |adventure| %>
-        <h4 class="emphasis"><%= link_to "#{adventure.name}", campaign_adventure_path( @campaign, adventure ) %></h4>
-        <div><button class="makeButton"><%= link_to "Edit Adventure", edit_campaign_adventure_path( @campaign, adventure ) %></button></div>
-        <div><%= form_for [@campaign, adventure], method: :delete do |f| %>
-          <%= f.submit "Delete Adventure", class: "delete" %>
+<div class="container">
+  <div class="col-sm-5">
+  <h3>Characters <%= link_to "(+)", new_campaign_character_path( @campaign ) %></h3>
+    <% @campaign.characters.each do |character| %>
+        <h4 class="emphasis"><%= link_to "#{character.char_name}", campaign_character_path( @campaign, character ) %></h4>
+        <h5><%= character.player_name %></h5>
+        <div><button class="makeButton"><%= link_to "Edit Character", edit_campaign_character_path( @campaign, character ) %></button></div>
+        <div><%= form_for [@campaign, character], method: :delete do |f| %>
+          <%= f.submit "Delete Character", class: "delete" %>
         <% end %></div>
     <% end %>
+  </div>
+  <div class="col-sm-5 col-sm-offset-1">
+    <h3>Adventures <%= link_to "(+)", new_campaign_adventure_path( @campaign ) %></h3>
+      <% @campaign.adventures.each do |adventure| %>
+          <h4 class="emphasis"><%= link_to "#{adventure.name}", campaign_adventure_path( @campaign, adventure ) %></h4>
+          <div><button class="makeButton"><%= link_to "Edit Adventure", edit_campaign_adventure_path( @campaign, adventure ) %></button></div>
+          <div><%= form_for [@campaign, adventure], method: :delete do |f| %>
+            <%= f.submit "Delete Adventure", class: "delete" %>
+          <% end %></div>
+      <% end %>
+  </div>
+</div>
