@@ -131,7 +131,7 @@
  }
 
  img {
-   max-width: 20em;
+   max-width: 30em;
    margin-bottom: 10px;
  }
 
@@ -150,4 +150,10 @@
    margin: 1em auto;
    text-align: center;
    display: block;
+ }
+
+ @media (max-width: 480px) {
+   img {
+     max-width: 15em;
+   }
  }

@@ -5,7 +5,7 @@
   <div><img id="map" src="<%= @campaign.img_url %>"/></div>
   <div class="container">
     <div class="col-sm-4 col-sm-offset-1">
-    </br>
+    <h3>Details</h3>
     <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
     <div><%= @campaign.summary %></div>
     <button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>
