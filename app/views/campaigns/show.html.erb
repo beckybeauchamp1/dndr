@@ -2,7 +2,7 @@
 <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
 
 <h2><%= @campaign.name %></h2>
-  <div><img src="<%= @campaign.img_url %>"/></div>
+  <div><img class="float" src="<%= @campaign.img_url %>"/></div>
   <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
   <div><%= @campaign.summary %></div>
 <button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>

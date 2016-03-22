@@ -1,7 +1,7 @@
 <div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
 
 <h2><%= @character.char_name %></h2>
-  <div><img src="<%= @character.img_url %>"/></div>
+  <div><img class="float" src="<%= @character.img_url %>"/></div>
   <div><span class="emphasis">Updated At: </span><%= @character.updated_at %></div>
   <div><span class="emphasis">Player Name: </span><%= @character.player_name %></div>
   <div><span class="emphasis">Class: </span><%= @character.klass.capitalize %></div>

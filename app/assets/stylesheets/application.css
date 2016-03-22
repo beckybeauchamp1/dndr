@@ -123,7 +123,10 @@
 
  img {
    max-width: 20em;
-   float: right;
    margin-bottom: 10px;
    padding-left: 3em;
+ }
+
+ .float {
+   float: right;
  }
