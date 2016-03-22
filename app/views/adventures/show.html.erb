@@ -1,12 +1,7 @@
 <div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
-
-<div class="container">
-<div class="col-xs-6">
-<h2><%= @adventure.name %></h2>
-  <div><span class="emphasis">Summary: </span><%= @adventure.summary %></div>
-  <button class="makeButton"><%= link_to "Edit", edit_campaign_character_path(@campaign, @adventure ) %></button>
-</div>
-<div class="col-xs-6">
+<div class="adventure">
+  <h2><%= @adventure.name %></h2>
   <div><img src="<%= @adventure.img_url %>"/></div>
 </div>
-</div>
+    <div><span class="emphasis">Summary: </span><%= @adventure.summary %></div>
+    <button class="makeButton"><%= link_to "Edit", edit_campaign_character_path(@campaign, @adventure ) %></button>

@@ -130,3 +130,9 @@
  .float {
    float: right;
  }
+
+ .adventure {
+   margin: 1em auto;
+   text-align: center;
+   display: block;
+ }
