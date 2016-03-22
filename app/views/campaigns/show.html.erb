@@ -1,26 +1,33 @@
 
 <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
 
-<h2><%= @campaign.name %></h2>
-  <div><img class="float" src="<%= @campaign.img_url %>"/></div>
-  <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
-  <div><%= @campaign.summary %></div>
-<button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>
+<h2 id="title"><%= @campaign.name %></h2>
+  <div><img id="map" src="<%= @campaign.img_url %>"/></div>
+  <div class="container">
+    <div class="col-sm-4 col-sm-offset-1">
+    </br>
+    <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
+    <div><%= @campaign.summary %></div>
+    <button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>
 
-<%= form_for @campaign, method: :delete do |f| %>
-  <%= f.submit "Delete Entire Campaign", class: "delete" %>
-<% end %>
+    <%= form_for @campaign, method: :delete do |f| %>
+      <%= f.submit "Delete Entire Campaign", class: "delete" %>
+    <% end %>
+    </div>
+    <div class="col-sm-4 col-sm-offset-1">
+    <% if @campaign.dmaster %>
+      <h3>Dungeon Master</h3>
+        <h4 class="emphasis"><%= link_to "#{@campaign.dmaster.name}", campaign_dmaster_path(@campaign, @campaign.dmaster) %></h4>
+        <div><button class="makeButton"><%= link_to "Edit DM", edit_campaign_dmaster_path( @campaign, @campaign.dmaster ) %></button></div>
+    <% else %>
+      <h3>Dungeon Master<%= link_to "(+)", new_campaign_dmaster_path( @campaign ) %></h3>
+    <% end %>
+  </div>
+  </div>
 
-<% if @campaign.dmaster %>
-  <h3>Dungeon Master</h3>
-    <h4 class="emphasis"><%= link_to "#{@campaign.dmaster.name}", campaign_dmaster_path(@campaign, @campaign.dmaster) %></h4>
-    <div><button class="makeButton"><%= link_to "Edit DM", edit_campaign_dmaster_path( @campaign, @campaign.dmaster ) %></button></div>
-<% else %>
-  <h3>Dungeon Master<%= link_to "(+)", new_campaign_dmaster_path( @campaign ) %></h3>
-<% end %>
 </br>
 <div class="container">
-  <div class="col-sm-5">
+  <div class="col-sm-4 col-sm-offset-1">
   <h3>Characters <%= link_to "(+)", new_campaign_character_path( @campaign ) %></h3>
     <% @campaign.characters.each do |character| %>
         <h4 class="emphasis"><%= link_to "#{character.char_name}", campaign_character_path( @campaign, character ) %></h4>
@@ -31,7 +38,7 @@
         <% end %></div>
     <% end %>
   </div>
-  <div class="col-sm-5 col-sm-offset-1">
+  <div class="col-sm-4 col-sm-offset-1">
     <h3>Adventures <%= link_to "(+)", new_campaign_adventure_path( @campaign ) %></h3>
       <% @campaign.adventures.each do |adventure| %>
           <h4 class="emphasis"><%= link_to "#{adventure.name}", campaign_adventure_path( @campaign, adventure ) %></h4>
