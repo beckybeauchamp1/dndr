@@ -1,7 +1,9 @@
 <div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
 
-<h2>Make a New Character:</h2>
+<h2 id="title">Make a New Character:</h2>
+<div class="container">
 <%= form_for [@campaign, @character] do |f| %>
+<div class="col-sm-4 col-sm-offset-1">
   <div><%= f.label :title, "Character Name:" %></div>
   <div><%= f.text_field :char_name %></div>
   <div><%= f.label :title, "Player Name:" %></div>
@@ -32,10 +34,12 @@
   <div><%= f.text_field :initiative %></div>
   <div><%= f.label :title, "Speed:" %></div>
   <div><%= f.text_field :speed %></div>
-  <div><%= f.label :title, "Proficiency Bonus:" %></div>
-  <div><%= f.text_field :prof_bonus %></div>
   <div><%= f.label :title, "Inspiration:" %></div>
   <div><%= f.text_field :inspiration %></div>
+  </div>
+  <div class="col-sm-4 col-sm-offset-1">
+  <div><%= f.label :title, "Proficiency Bonus:" %></div>
+  <div><%= f.text_field :prof_bonus %></div>
   <div><%= f.label :title, "Languages:" %></div>
   <div><%= f.text_area :languages, :cols => "24", :rows => "4" %></div>
   <div><%= f.label :title, "Feautures:" %></div>
@@ -51,4 +55,6 @@
   <div><%= f.label :title, "Flaws:" %></div>
   <div><%= f.text_area :flaws, :cols => "24", :rows => "4" %></div>
   <div><%= f.submit "Create" %></div>
+</div>
 <% end %>
+</div>
