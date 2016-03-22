@@ -28,3 +28,12 @@
         <%= f.submit "Delete Character", class: "delete" %>
       <% end %></div>
   <% end %>
+
+  <h3>Adventures <%= link_to "(+)", new_campaign_adventure_path( @campaign ) %></h3>
+    <% @campaign.adventures.each do |adventure| %>
+        <h4 class="emphasis"><%= link_to "#{adventure.name}", campaign_adventure_path( @campaign, adventure ) %></h4>
+        <div><button class="makeButton"><%= link_to "Edit Adventure", edit_campaign_adventure_path( @campaign, adventure ) %></button></div>
+        <div><%= form_for [@campaign, adventure], method: :delete do |f| %>
+          <%= f.submit "Delete Adventure", class: "delete" %>
+        <% end %></div>
+    <% end %>
