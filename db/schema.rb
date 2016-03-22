@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321205731) do
+ActiveRecord::Schema.define(version: 20160322130754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adventures", force: :cascade do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "img_url"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "adventures", ["campaign_id"], name: "index_adventures_on_campaign_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -65,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160321205731) do
 
   add_index "dmasters", ["campaign_id"], name: "index_dmasters_on_campaign_id", using: :btree
 
+  add_foreign_key "adventures", "campaigns"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "dmasters", "campaigns"
 end

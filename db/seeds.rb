@@ -3,10 +3,17 @@ Dmaster.destroy_all
 Campaign.destroy_all
 
 5.times do |index|
-  campaign = Campaign.create!(name: Faker::Company.name,
-                  summary: Faker::Company.catch_phrase,
+  campaign = Campaign.create!(name: Faker::App.name,
+                  summary: Faker::Company.bs,
                   img_url: ["http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg", "https://s-media-cache-ak0.pinimg.com/564x/7a/ce/ca/7aceca5b40a2e46726a987f0b94107c3.jpg", "https://s-media-cache-ak0.pinimg.com/474x/5a/f9/5c/5af95c80cd0e8b0c669f2240622ad4e0.jpg", "http://www.wizards.com/dnd/images/wol_maps/WoL_map36.jpg", "https://s-media-cache-ak0.pinimg.com/474x/c9/01/57/c901574583fbe696e31d9753028c0fd8.jpg"].sample)
   Dmaster.create!(name: Faker::Name.name, campaign_id: index + 1)
+  3.times do
+    campaign.adventures.create!(
+    name: Faker::Book.title,
+    summary: Faker::Hipster.paragraph,
+    img_url: Faker::Avatar.image
+    )
+  end
   5.times do
     campaign.characters.create!(
     player_name: Faker::Name.name,
@@ -37,7 +44,7 @@ Campaign.destroy_all
   end
 end
 
-p "Created #{Campaign.count} campaigns, #{Dmaster.count} dungeon masters, and #{Character.count} characters."
+p "Created #{Campaign.count} campaigns, #{Dmaster.count} dungeon masters, #{Adventure.count} adventures, and #{Character.count} characters."
 
 #
 # Campaign.find(1).characters
