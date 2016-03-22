@@ -18,7 +18,7 @@ class CharactersController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
     @character = @campaign.characters.create! character_params
 
-    redirect_to campaign_path(@campaign)
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   def edit
@@ -31,7 +31,7 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.update character_params
 
-    redirect_to campaign_path(@campaign)
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   def destroy

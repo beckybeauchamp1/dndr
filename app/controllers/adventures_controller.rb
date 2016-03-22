@@ -18,7 +18,7 @@ class AdventuresController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
     @adventure = @campaign.adventures.create! adventure_params
 
-    redirect_to campaign_path(@campaign)
+    redirect_to campaign_adventure_path(@campaign, @adventure)
   end
 
   def edit
@@ -31,7 +31,7 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.find(params[:id])
     @adventure.update adventure_params
 
-    redirect_to campaign_path(@campaign)
+    redirect_to campaign_adventure_path(@campaign, @adventure)
   end
 
   def destroy

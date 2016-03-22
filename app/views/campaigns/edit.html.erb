@@ -9,7 +9,7 @@
   <div><%= f.label :title, "Short Summary:" %></div>
   <div><%= f.text_area :summary, :cols => "24", :rows => "4"  %></div>
 
-  <div><%= f.submit "Edit" %></div>
+  <div><%= f.submit "Save Changes" %></div>
 <% end %>
 
 <%= form_for @campaign, method: :delete do |f| %>

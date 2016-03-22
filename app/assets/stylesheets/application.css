@@ -25,6 +25,7 @@
    background-color: #e7e7db;
    margin: 1em auto;
    padding: 2em;
+   padding-bottom: 3em;
    padding-top: none;
    -webkit-border-radius: 10px;
    border-radius: 10px;
@@ -132,6 +133,7 @@
 
  img {
    max-width: 30em;
+   max-height: 30em;
    margin-bottom: 10px;
  }
 
@@ -155,5 +157,8 @@
  @media (max-width: 480px) {
    img {
      max-width: 15em;
+   }
+   #charName {
+     text-align: center;
    }
  }
