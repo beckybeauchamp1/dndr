@@ -1,5 +1,4 @@
-<!-- <%= render "layouts/logo" %> -->
-
+<% if @campaign.img_url %>
 <div id="myCarousel" class="carousel">
   <div class="carousel-inner" role="listbox">
     <div class="item active">
@@ -11,10 +10,15 @@
       </div>
     </div>
   </div>
-
+  <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
 </div>
+  <% else %>
+  <%= render "layouts/logo" %>
+  <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
+  <h1 id="title"><%=@campaign.name%></h1>
+<% end %>
 
-<div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
+
   <div class="container">
     <div class="col-sm-4 col-sm-offset-1">
     <h3><%= @campaign.name %></h3>
