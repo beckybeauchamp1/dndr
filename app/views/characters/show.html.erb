@@ -28,6 +28,21 @@
   <div><span class="emphasis">Flaws: </span><%= @character.flaws %></div>
 <button class="makeButton"><%= link_to "Edit", edit_campaign_character_path(@campaign, @character ) %></button>
 <h2>Abilities</h2>
-<button class="makeButton"><%= link_to "Add Abilities", new_campaign_character_ability_path( @campaign, @character ) %></button>
-
+<% if @character.ability %>
 <button class="makeButton"><%= link_to "See Abilities", campaign_character_ability_path( @campaign, @character ) %></button>
+<button class="makeButton"><%= link_to "Edit Abilities", edit_campaign_character_ability_path( @campaign, @character ) %></button>
+<div><span class="emphasis">Strength: </span><%= @character.ability.strength %></div>
+<div><span class="emphasis">Strength Modifier: </span><%= @character.ability.strength_mod %></div>
+<div><span class="emphasis">Dexterity: </span><%= @character.ability.dexterity %></div>
+<div><span class="emphasis">Dexterity Modifier: </span><%= @character.ability.dexterity_mod %></div>
+<div><span class="emphasis">Constitution: </span><%= @character.ability.constitution %></div>
+<div><span class="emphasis">Constitution Modifier: </span><%= @character.ability.constitution_mod %></div>
+<div><span class="emphasis">Intelligence: </span><%= @character.ability.intelligence %></div>
+<div><span class="emphasis">Intelligence Modifier: </span><%= @character.ability.intelligence_mod %></div>
+<div><span class="emphasis">Wisdom: </span><%= @character.ability.wisdom %></div>
+<div><span class="emphasis">Wisdom Modifier: </span><%= @character.ability.wisdom_mod %></div>
+<div><span class="emphasis">Charisma: </span><%= @character.ability.charisma %></div>
+<div><span class="emphasis">Charisma Modifier: </span><%= @character.ability.charisma_mod %></div>
+<% else %>
+<button class="makeButton"><%= link_to "Add Abilities", new_campaign_character_ability_path( @campaign, @character ) %></button>
+<% end %>
