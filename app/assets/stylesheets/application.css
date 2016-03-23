@@ -84,6 +84,15 @@
 #title {
   text-align: center;
   font-size: 2.5em;
+  color: #333;
+}
+
+div#title.carousel-caption {
+  background-color: #e7e7db;
+  border-radius: 5px;
+  padding: 0px;
+  bottom: 40px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
  .emphasis {
@@ -193,5 +202,5 @@
      font-size: 5px;
      display: none;
      max-width: 5px;
-   }*/ 
+   }*/
  }

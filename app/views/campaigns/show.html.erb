@@ -1,11 +1,27 @@
-<%= render "layouts/logo" %>
+<!-- <%= render "layouts/logo" %> -->
+
+<div id="myCarousel" class="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img id="map" src="<%= @campaign.img_url %>" alt="First slide">
+      <div class="container">
+        <div class="carousel-caption" id="title">
+          <h1><%= @campaign.name %></h1>
+          <!-- <p><a class="btn btn-md btn-primary" href="/campaigns/new" role="button">Create a Campaign Today</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
 
-<h2 id="title"><%= @campaign.name %></h2>
-  <div><img id="map" src="<%= @campaign.img_url %>"/></div>
+<!-- <h2 id="title"><%= @campaign.name %></h2>
+  <div><img id="map" src="<%= @campaign.img_url %>"/></div> -->
   <div class="container">
     <div class="col-sm-4 col-sm-offset-1">
-    <h3>Details</h3>
+    <h3><%= @campaign.name %></h3>
     <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
     <div><%= @campaign.summary %></div>
     <button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>
