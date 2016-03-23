@@ -15,7 +15,7 @@ Campaign.destroy_all
     )
   end
   5.times do
-    campaign.characters.create!(
+    character = campaign.characters.create!(
     player_name: Faker::Name.name,
     char_name: Faker::Superhero.name,
     klass: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Wizard', 'Monk', 'Paladin', 'Ranger', 'Sorcerer', 'Rogue', 'Warlock'].sample,
