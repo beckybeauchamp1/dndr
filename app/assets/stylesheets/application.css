@@ -22,7 +22,7 @@
  }
 
  #appBox {
-   background-color: #e7e7db;
+   background-color: #edd9c0;
    margin: 1em auto;
    padding: 2em;
    padding-bottom: 3em;
@@ -91,14 +91,14 @@ h1#dndr {
 #title {
   text-align: center;
   font-size: 2.5em;
-  color: #333;
+  /*color: #333;*/
 }
 
 div#title.carousel-caption {
-  background-color: #e7e7db;
-  background: linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
-  background: -webkit-linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
-  background: -moz-linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
+  background-color: #333;
+  background: linear-gradient(top, rgba(51,51,51,.80), rgba(51,51,51,.80));
+  background: -webkit-linear-gradient(top, rgba(51,51,51,.80), rgba(51,51,51,.80));
+  background: -moz-linear-gradient(top, rgba(51,51,51,.80), rgba(51,51,51,.80));
   border-radius: 5px;
   padding: 0px;
   bottom: 40px;
