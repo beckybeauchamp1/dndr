@@ -150,6 +150,7 @@
    max-width: 30em;
    max-height: 30em;
    margin-bottom: 10px;
+   border-radius: 10px;
  }
 
 #map {
