@@ -17,7 +17,7 @@ class AbilitiesController < ApplicationController
     @character = @campaign.characters.find(params[:character_id])
     @ability = @character.ability.create! ability_params
 
-    redirect_to campaign_character_ability_path(@campaign, @character, @ability)
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   def edit
@@ -32,7 +32,7 @@ class AbilitiesController < ApplicationController
     @ability = @character.ability
     @ability.update ability_params
 
-    redirect_to campaign_character_ability_path(@campaign, @character, @ability)
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   def destroy
