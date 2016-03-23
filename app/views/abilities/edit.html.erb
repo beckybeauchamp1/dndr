@@ -1,0 +1,31 @@
+<%= render "layouts/logo" %>
+<div id="back" class="emphasis"><%= link_to "Back to Character", campaign_character_path(@campaign, @character) %></div>
+
+<h2>Edit Abilities:</h2>
+<%= form_for [@campaign, @character, @ability] do |f| %>
+  <div><%= f.label :title, "Strength:" %></div>
+  <div><%= f.text_field :strength %></div>
+  <div><%= f.label :title, "Strength Modifier:" %></div>
+  <div><%= f.text_field :strength_mod %></div>
+  <div><%= f.label :title, "Dexterity:" %></div>
+  <div><%= f.text_field :dexterity %></div>
+  <div><%= f.label :title, "Dexterity Modifier:" %></div>
+  <div><%= f.text_field :dexterity_mod %></div>
+  <div><%= f.label :title, "Constitution:" %></div>
+  <div><%= f.text_field :constitution %></div>
+  <div><%= f.label :title, "Constitution Modifier:" %></div>
+  <div><%= f.text_field :constitution_mod %></div>
+  <div><%= f.label :title, "Intelligence:" %></div>
+  <div><%= f.text_field :intelligence %></div>
+  <div><%= f.label :title, "Intelligence Modifier:" %></div>
+  <div><%= f.text_field :intelligence_mod %></div>
+  <div><%= f.label :title, "Wisdom:" %></div>
+  <div><%= f.text_field :wisdom %></div>
+  <div><%= f.label :title, "Wisdom Modifier:" %></div>
+  <div><%= f.text_field :wisdom_mod %></div>
+  <div><%= f.label :title, "Charisma:" %></div>
+  <div><%= f.text_field :charisma %></div>
+  <div><%= f.label :title, "Charisma Modifier:" %></div>
+  <div><%= f.text_field :charisma_mod %></div>
+  <div><%= f.submit "Edit" %></div>
+<% end %>
