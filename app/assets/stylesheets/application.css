@@ -89,6 +89,9 @@
 
 div#title.carousel-caption {
   background-color: #e7e7db;
+  background: linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
+  background: -webkit-linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
+  background: -moz-linear-gradient(top, rgba(231,231,219,.80), rgba(231,231,219,.80));
   border-radius: 5px;
   padding: 0px;
   bottom: 40px;
