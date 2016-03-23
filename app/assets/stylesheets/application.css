@@ -188,4 +188,10 @@
    #charName {
      text-align: center;
    }
+
+   /*a.btn.btn-md.btn-primary {
+     font-size: 5px;
+     display: none;
+     max-width: 5px;
+   }*/ 
  }
