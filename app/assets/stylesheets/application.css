@@ -57,6 +57,17 @@
    color: #333333;
  }
 
+ #campaigns {
+  display: flex;
+ 	flex-wrap: wrap;
+ }
+
+#campItem {
+  flex: 1 0 25%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
  h1, h2, h3 {
    font-family: "Lobster", "Helvetica", sans-serif;
  }

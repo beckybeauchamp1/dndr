@@ -9,21 +9,19 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="http://dnd.wizards.com/sites/default/files/media/styles/second_hubpage_banner/public/images/head-banner/Banner_Drizzt.jpg?itok=lG2G1_Xn" alt="First slide">
+          <img class="first-slide" src="http://dnd.wizards.com/sites/default/files/media/styles/story_banner/public/images/head-banner/HERO_RiseTiamat_1.jpg?itok=ou0OG0JI" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <%= render "layouts/logo" %>
-              <p></p>
+              <h1>d&amp;dr</h1>
               <p><a class="btn btn-md btn-primary" href="/campaigns/new" role="button">Create a Campaign Today</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="http://dnd.wizards.com/sites/default/files/media/styles/story_banner/public/images/head-banner/HERO_RiseTiamat_1.jpg?itok=ou0OG0JI" alt="Second slide">
+          <img class="second-slide" src="http://dnd.wizards.com/sites/default/files/media/styles/second_hubpage_banner/public/images/head-banner/03_NEW-TO-DnD_Races_Heroes_Hero_140725.jpg?itok=Lv71J5AL" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Gather your friends.</h1>
-              <p></p>
               <p><a class="btn btn-md btn-primary" href="/campaigns/new" role="button">Create a Campaign Today</a></p>
             </div>
           </div>
@@ -33,7 +31,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Battle your foes.</h1>
-              <p></p>
               <p><a class="btn btn-md btn-primary" href="/campaigns/new" role="button">Create a Campaign Today</a></p>
             </div>
           </div>
@@ -56,10 +53,11 @@
     </div> -->
 
 <!-- <%= render "layouts/logo" %> -->
-<h1>Campaigns <%= link_to "(+)", new_campaign_path %></h1>
-
+<h1 id="title">Campaigns <%= link_to "(+)", new_campaign_path %></h1>
+<div id="campaigns">
   <% @campaigns.each do |campaign| %>
-    <div class="emphasis" id="campaignName"><%= link_to campaign.name, campaign %></div>
+    <div id="campItem"><div class="emphasis" id="campaignName"><%= link_to campaign.name, campaign %></div>
     <div><%= campaign.summary %></div>
-    </br>
+    </div>
   <% end %>
+</div>
