@@ -39,22 +39,29 @@
  .carousel-control.left {
    background-image: none;
  }
-/*
- .jumbotron {
-   background-image: url("http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg");
-   background-size: cover;
+
+  .carousel-caption {
+    text-shadow: 0 1px 2px rgba(0,0,0,.9);
+  }
+
+h1#dndr {
+  text-align: center;
+  font-size: 4em;
+  background-image: url("http://dnd.wizards.com/sites/default/files/media/styles/story_banner/public/images/head-banner/HERO_RiseTiamat_1.jpg?itok=ou0OG0JI");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
- }*/
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
 
- .dndr {
-   text-align: center;
-   font-size: 4em;
-   color: #d50000;
+ h1#dndr > a {
+   color: #FFF;
+   text-shadow: 0 1px 2px rgba(0,0,0,.9);
  }
 
- #amp {
-   color: #333333;
+ h1#dndr > a:hover {
+   color: #9d0a0e;
  }
 
  #campaigns {
@@ -186,7 +193,6 @@ div#title.carousel-caption {
     float: right;
     margin-left: 3em;
     margin-right: 3em;
-    /*border-radius: 200px;*/
  }
 
  .adventure {
