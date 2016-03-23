@@ -29,3 +29,5 @@
 <button class="makeButton"><%= link_to "Edit", edit_campaign_character_path(@campaign, @character ) %></button>
 <h2>Abilities</h2>
 <button class="makeButton"><%= link_to "Add Abilities", new_campaign_character_ability_path( @campaign, @character ) %></button>
+
+<button class="makeButton"><%= link_to "See Abilities", campaign_character_ability_path( @campaign, @character ) %></button>

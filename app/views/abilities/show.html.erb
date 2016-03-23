@@ -1,0 +1,15 @@
+<%= render "layouts/logo" %>
+<div id="back" class="emphasis"><%= link_to "Back to Character", campaign_character_path(@campaign, @character) %></div>
+
+<div><span class="emphasis">Strength: </span><%= @ability.strength %></div>
+<div><span class="emphasis">Strength Modifier: </span>+<%= @ability.strength_mod %></div>
+<div><span class="emphasis">Dexterity: </span><%= @ability.dexterity %></div>
+<div><span class="emphasis">Dexterity Modifier: </span>+<%= @ability.dexterity_mod %></div>
+<div><span class="emphasis">Constitution: </span><%= @ability.constitution %></div>
+<div><span class="emphasis">Constitution Modifier: </span>+<%= @ability.constitution_mod %></div>
+<div><span class="emphasis">Intelligence: </span><%= @ability.intelligence %></div>
+<div><span class="emphasis">Intelligence Modifier: </span>+<%= @ability.intelligence_mod %></div>
+<div><span class="emphasis">Wisdom: </span><%= @ability.wisdom %></div>
+<div><span class="emphasis">Wisdom Modifier: </span>+<%= @ability.wisdom_mod %></div>
+<div><span class="emphasis">Charisma: </span><%= @ability.charisma %></div>
+<div><span class="emphasis">Charisma Modifier: </span>+<%= @ability.charisma_mod %></div>
