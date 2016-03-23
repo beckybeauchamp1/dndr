@@ -32,6 +32,21 @@
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
  }
 
+ .carousel-control.right {
+   background-image: none;
+ }
+
+ .carousel-control.left {
+   background-image: none;
+ }
+/*
+ .jumbotron {
+   background-image: url("http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg");
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ }*/
+
  .dndr {
    text-align: center;
    font-size: 4em;
