@@ -63,7 +63,7 @@
  }
 
 #campItem {
-  flex: 1 0 25%;
+  flex: 1 0 200px;
   box-sizing: border-box;
   padding: 10px;
 }
