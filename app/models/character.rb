@@ -1,5 +1,6 @@
 class Character < ActiveRecord::Base
   belongs_to :campaign
+  has_many :abilities, dependent: :destroy
 
   validates :char_name, presence: true
   validates :klass, presence: true
