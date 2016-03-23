@@ -7,7 +7,6 @@
       <div class="container">
         <div class="carousel-caption" id="title">
           <h1><%= @campaign.name %></h1>
-          <!-- <p><a class="btn btn-md btn-primary" href="/campaigns/new" role="button">Create a Campaign Today</a></p> -->
         </div>
       </div>
     </div>
@@ -16,14 +15,12 @@
 </div>
 
 <div id="back" class="emphasis"><%= link_to "Back to Campaigns", campaigns_path %></div>
-
-<!-- <h2 id="title"><%= @campaign.name %></h2>
-  <div><img id="map" src="<%= @campaign.img_url %>"/></div> -->
   <div class="container">
     <div class="col-sm-4 col-sm-offset-1">
     <h3><%= @campaign.name %></h3>
     <div><span class="emphasis">Updated At: </span><%= @campaign.updated_at %></div>
     <div><%= @campaign.summary %></div>
+    <h4 class="emphasis"><%= link_to "Map", @campaign.img_url %></h4>
     <button class="makeButton"><%= link_to "Edit Campaign", edit_campaign_path( @campaign ) %></button>
 
     <%= form_for @campaign, method: :delete do |f| %>
