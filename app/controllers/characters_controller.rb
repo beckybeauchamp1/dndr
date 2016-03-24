@@ -44,7 +44,7 @@ class CharactersController < ApplicationController
 
   private
   def character_params
-    params.require(:character).permit(:player_name, :char_name, :klass, :level, :race, :background, :alignment, :archetype, :xp, :hp_max, :hp_current, :armor_class, :initiative, :speed, :prof_bonus, :inspiration, :languages, :features, :equipment, :personality, :ideals, :bonds, :flaws)
+    params.require(:character).permit(:player_name, :char_name, :klass, :level, :race, :background, :alignment, :archetype, :xp, :hp_max, :hp_current, :armor_class, :initiative, :speed, :prof_bonus, :inspiration, :languages, :features, :equipment, :personality, :ideals, :bonds, :flaws, :img_url)
   end
 
 end
