@@ -203,6 +203,14 @@ div#title.carousel-caption {
    display: block;
  }
 
+ #copyright {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+  color: white;
+  font-size: 8px;
+ }
+
  @media (max-width: 480px) {
    img {
      max-width: 15em;
