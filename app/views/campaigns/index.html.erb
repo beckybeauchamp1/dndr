@@ -45,18 +45,11 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <!-- /.carousel -->
-    <!-- <div class="jumbotron">
-      <h1>Hello, world!</h1>
-      <p>...</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-    </div> -->
 
-<!-- <%= render "layouts/logo" %> -->
 <h1 id="title">Campaigns <%= link_to "(+)", new_campaign_path %></h1>
-<div id="campaigns">
+<div class="campaigns">
   <% @campaigns.each do |campaign| %>
-    <div id="campItem"><div class="emphasis" id="campaignName"><%= link_to campaign.name, campaign %></div>
+    <div class="campItem"><div class="emphasis campaignName"><%= link_to campaign.name, campaign %></div>
     <div><%= campaign.summary %></div>
     </div>
   <% end %>
