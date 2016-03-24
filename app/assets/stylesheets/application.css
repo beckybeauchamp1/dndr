@@ -215,6 +215,13 @@ div#title.carousel-caption {
    img {
      max-width: 15em;
    }
+
+   img.float {
+     float: none;
+     display: block;
+     margin: 1em auto;
+   }
+
    #charName {
      text-align: center;
    }
