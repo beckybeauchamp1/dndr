@@ -1,6 +1,6 @@
 # README
 
-** https://dndr.herokuapp.com/**
+**https://dndr.herokuapp.com/**
 
 **d&dr** (pronounced "d-'n-d-er") is a full stack Ruby on Rails application to help players of the popular Dungeons and Dragons game to organize campaigns, characters, and adventure chapters.
 
@@ -9,7 +9,12 @@ Although D&D has been around for decades, players mainly rely on a PDF form to c
 Wouldn't it be so great if there was an app where you can create/share your "campaign" (a.k.a. your group's instance of a D&D game) and create/share your characters all in one spot? Well now there is with **d&dr**!
 
 **Technologies Used:**
-* Ruby on Rails, Faker Gem, HTML, CSS, Bootstrap, and a little JavaScript/jQuery.
+* Ruby on Rails
+* Faker Gem
+* PostgreSQL, ActiveRecord
+* HTML, CSS, Bootstrap
+* A little JavaScript/jQuery
+* Heroku
 
 **Approach Taken:**
 * I started off with creating an Entity-Relationship-Diagram (ERD) to layout the relationships between my app components. I created bronze, silver, and gold goals, which are color coded in my ERD. I also created some basic wireframes to have an idea of how I wanted the app to look.
@@ -28,7 +33,7 @@ Wouldn't it be so great if there was an app where you can create/share your "cam
 * An "are you sure you want to delete this?" alert. Ideally, I would like a prompt window to show up if a user clicks the delete button. If the users types no in the prompt, it should prevent deletion. I could get the alert button to show up, but I couldn't prevent deletion.
 
 **Steps for the Future:**
-  * Add a user component: This would actually be a complex relationship (a user can belong to many campaigns, and a user can have many characters among those campaigns).
-  * Flash notifications when a user does not fill in a required field on a form.
-  * A character has a ton of attributes: although many attributes are included in this version, I still haven't included skills, weapons, and spells.
-  * More attributes for the DM, including a section to create 'Non-Player Characters' or NPCs.
+* Add a user component: This would actually be a complex relationship (a user can belong to many campaigns, and a user can have many characters among those campaigns).
+* Flash notifications when a user does not fill in a required field on a form.
+* A character has a ton of attributes: although many attributes are included in this version, I still haven't included skills, weapons, and spells.
+* More attributes for the DM, including a section to create 'Non-Player Characters' or NPCs.
