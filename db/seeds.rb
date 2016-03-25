@@ -1,8 +1,10 @@
 Character.destroy_all
 Dmaster.destroy_all
 Campaign.destroy_all
+Adventure.destroy_all
+Ability.destroy_all
 
-15.times do |index|
+5.times do |index|
   campaign = Campaign.create!(name: Faker::Book.title,
                   summary: Faker::Company.bs,
                   img_url: ["http://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg", "http://media.wizards.com/legacy/dnd/images/bld_farmhouse-ground-floor.jpg", "http://media.wizards.com/legacy/dnd/images/dmxp_060_map_maiden.jpg"].sample)
@@ -14,7 +16,7 @@ Campaign.destroy_all
     img_url: ["https://s-media-cache-ak0.pinimg.com/564x/7a/ce/ca/7aceca5b40a2e46726a987f0b94107c3.jpg", "https://s-media-cache-ak0.pinimg.com/474x/5a/f9/5c/5af95c80cd0e8b0c669f2240622ad4e0.jpg", "http://www.wizards.com/dnd/images/wol_maps/WoL_map36.jpg", "https://s-media-cache-ak0.pinimg.com/474x/c9/01/57/c901574583fbe696e31d9753028c0fd8.jpg"].sample
     )
   end
-  5.times do
+  4.times do
     character = campaign.characters.create!(
     player_name: Faker::Name.name,
     char_name: Faker::Superhero.name,
