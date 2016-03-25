@@ -46,7 +46,7 @@ class SpellsController < ApplicationController
     @spell = @character.spells.find(params[:id])
     @spell.destroy
 
-    redirect_to campaign_path(@character)
+    redirect_to campaign_character_path(@campaign, @character)
   end
 
   private

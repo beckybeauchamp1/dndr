@@ -1,0 +1,23 @@
+<%= render "layouts/logo" %>
+<div id="back" class="emphasis"><%= link_to "Back to Character", campaign_character_path(@campaign, @character) %></div>
+
+<h2>Edit <%= @spell.name %>:</h2>
+<%= form_for [@campaign, @character, @spell] do |f| %>
+  <div><%= f.label :title, "Spell Name:" %></div>
+  <div><%= f.text_field :name %></div>
+  <div><%= f.label :title, "Level:" %></div>
+  <div><%= f.text_field :level %></div>
+  <div><%= f.label :title, "Casting Time:" %></div>
+  <div><%= f.text_field :casting_time %></div>
+  <div><%= f.label :title, "Range:" %></div>
+  <div><%= f.text_field :range %></div>
+  <div><%= f.label :title, "Components:" %></div>
+  <div><%= f.text_field :components %></div>
+  <div><%= f.label :title, "Duration:" %></div>
+  <div><%= f.text_field :duration %></div>
+  <div><%= f.label :title, "Description:" %></div>
+  <div><%= f.text_area :description, :cols => "24", :rows => "4" %></div>
+  <div><%= f.label :title, "Notes:" %></div>
+  <div><%= f.text_area :notes, :cols => "24", :rows => "4" %></div>
+  <div><%= f.submit "Save Changes" %></div>
+<% end %>
