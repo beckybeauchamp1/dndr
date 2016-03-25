@@ -46,7 +46,7 @@ class AbilitiesController < ApplicationController
 
   private
   def ability_params
-    params.require(:ability).permit(:strength, :strength_mod, :dexterity, :dexterity_mod, :constitution, :constitution_mod, :intelligence, :intelligence_mod, :wisdom, :wisdom_mod, :charisma, :charisma_mod)
+    params.require(:ability).permit(:strength, :strength_mod, :dexterity, :dexterity_mod, :constitution, :constitution_mod, :intelligence, :intelligence_mod, :wisdom, :wisdom_mod, :charisma, :charisma_mod, :acrobatics, :animal_handling, :arcana, :athletics, :deception, :history, :insight, :intimidation, :investigation, :medicine, :nature, :perception, :performance, :persuasion, :religion, :sleight_hand, :stealth, :survival)
   end
 
 end

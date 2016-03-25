@@ -27,21 +27,48 @@
   <div><span class="emphasis">Bonds: </span><%= @character.bonds %></div>
   <div><span class="emphasis">Flaws: </span><%= @character.flaws %></div>
 <button class="makeButton"><%= link_to "Edit", edit_campaign_character_path(@campaign, @character ) %></button>
-<h2>Abilities</h2>
+<h2>Abilities &amp; Skills</h2>
 <% if @character.ability %>
-<div><span class="emphasis">Strength: </span><%= @character.ability.strength %></div>
-<div><span class="emphasis">Strength Modifier: </span><%= @character.ability.strength_mod %></div>
-<div><span class="emphasis">Dexterity: </span><%= @character.ability.dexterity %></div>
-<div><span class="emphasis">Dexterity Modifier: </span><%= @character.ability.dexterity_mod %></div>
-<div><span class="emphasis">Constitution: </span><%= @character.ability.constitution %></div>
-<div><span class="emphasis">Constitution Modifier: </span><%= @character.ability.constitution_mod %></div>
-<div><span class="emphasis">Intelligence: </span><%= @character.ability.intelligence %></div>
-<div><span class="emphasis">Intelligence Modifier: </span><%= @character.ability.intelligence_mod %></div>
-<div><span class="emphasis">Wisdom: </span><%= @character.ability.wisdom %></div>
-<div><span class="emphasis">Wisdom Modifier: </span><%= @character.ability.wisdom_mod %></div>
-<div><span class="emphasis">Charisma: </span><%= @character.ability.charisma %></div>
-<div><span class="emphasis">Charisma Modifier: </span><%= @character.ability.charisma_mod %></div>
-<button class="makeButton"><%= link_to "Edit Abilities", edit_campaign_character_ability_path( @campaign, @character ) %></button>
+<div class="container">
+  <div class="col-sm-6">
+    <div><span class="emphasis">Strength: </span><%= @character.ability.strength %></div>
+    <div><span class="emphasis">Strength Modifier: </span><%= @character.ability.strength_mod %></div>
+    <div><span class="emphasis">Dexterity: </span><%= @character.ability.dexterity %></div>
+    <div><span class="emphasis">Dexterity Modifier: </span><%= @character.ability.dexterity_mod %></div>
+    <div><span class="emphasis">Constitution: </span><%= @character.ability.constitution %></div>
+    <div><span class="emphasis">Constitution Modifier: </span><%= @character.ability.constitution_mod %></div>
+    <div><span class="emphasis">Intelligence: </span><%= @character.ability.intelligence %></div>
+    <div><span class="emphasis">Intelligence Modifier: </span><%= @character.ability.intelligence_mod %></div>
+    <div><span class="emphasis">Wisdom: </span><%= @character.ability.wisdom %></div>
+    <div><span class="emphasis">Wisdom Modifier: </span><%= @character.ability.wisdom_mod %></div>
+    <div><span class="emphasis">Charisma: </span><%= @character.ability.charisma %></div>
+    <div><span class="emphasis">Charisma Modifier: </span><%= @character.ability.charisma_mod %></div>
+  </br>
+    <div><p>Use your ability modifiers to complete your skills! Don't forget to add the value of your proficiency bonus to your designated proficient skills.</p></div>
+  </div>
+  <div class="col-sm-6">
+    <div><span class="emphasis">Acrobatics (Dex): </span><%= @character.ability.acrobatics %></div>
+    <div><span class="emphasis">Animal Handling (Wis): </span><%= @character.ability.animal_handling %></div>
+    <div><span class="emphasis">Arcana (Int): </span><%= @character.ability.arcana %></div>
+    <div><span class="emphasis">Athletics (Str): </span><%= @character.ability.athletics %></div>
+    <div><span class="emphasis">Deception (Cha): </span><%= @character.ability.deception %></div>
+    <div><span class="emphasis">History (Int): </span><%= @character.ability.history %></div>
+    <div><span class="emphasis">Insight (Wis): </span><%= @character.ability.insight %></div>
+    <div><span class="emphasis">Intimidation (Cha): </span><%= @character.ability.intimidation %></div>
+    <div><span class="emphasis">Investigation (Int): </span><%= @character.ability.investigation %></div>
+    <div><span class="emphasis">Medicine (Wis): </span><%= @character.ability.medicine %></div>
+    <div><span class="emphasis">Nature (Int): </span><%= @character.ability.nature %></div>
+    <div><span class="emphasis">Perception (Wis): </span><%= @character.ability.perception %></div>
+    <div><span class="emphasis">Performance (Cha): </span><%= @character.ability.performance %></div>
+    <div><span class="emphasis">Persuasion (Cha): </span><%= @character.ability.persuasion %></div>
+    <div><span class="emphasis">Religion (Int): </span><%= @character.ability.religion %></div>
+    <div><span class="emphasis">Sleight of Hand (Dex): </span><%= @character.ability.sleight_hand %></div>
+    <div><span class="emphasis">Stealth (Dex): </span><%= @character.ability.stealth %></div>
+    <div><span class="emphasis">Survival (Wis): </span><%= @character.ability.survival %></div>
+    <div><span class="emphasis">Passive Wisdom (Perception): </span><%= @character.ability.perception %></div>
+  </div>
+</div>
+<button class="makeButton"><%= link_to "Edit", edit_campaign_character_ability_path( @campaign, @character ) %></button>
 <% else %>
-<button class="makeButton"><%= link_to "Add Abilities", new_campaign_character_ability_path( @campaign, @character ) %></button>
+<button class="makeButton"><%= link_to "Add", new_campaign_character_ability_path( @campaign, @character ) %></button>
 <% end %>
