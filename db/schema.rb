@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323182356) do
+ActiveRecord::Schema.define(version: 20160325175636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,8 +114,25 @@ ActiveRecord::Schema.define(version: 20160323182356) do
 
   add_index "dmasters", ["campaign_id"], name: "index_dmasters_on_campaign_id", using: :btree
 
+  create_table "spells", force: :cascade do |t|
+    t.string   "name"
+    t.string   "level"
+    t.string   "casting_time"
+    t.string   "range"
+    t.string   "components"
+    t.string   "duration"
+    t.string   "description"
+    t.string   "notes"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spells", ["character_id"], name: "index_spells_on_character_id", using: :btree
+
   add_foreign_key "abilities", "characters"
   add_foreign_key "adventures", "campaigns"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "dmasters", "campaigns"
+  add_foreign_key "spells", "characters"
 end
