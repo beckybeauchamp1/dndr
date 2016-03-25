@@ -11,10 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322130754) do
+ActiveRecord::Schema.define(version: 20160323182356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abilities", force: :cascade do |t|
+    t.integer  "strength"
+    t.string   "strength_mod"
+    t.integer  "dexterity"
+    t.string   "dexterity_mod"
+    t.integer  "constitution"
+    t.string   "constitution_mod"
+    t.integer  "intelligence"
+    t.string   "intelligence_mod"
+    t.integer  "wisdom"
+    t.string   "wisdom_mod"
+    t.integer  "charisma"
+    t.string   "charisma_mod"
+    t.string   "acrobatics"
+    t.string   "animal_handling"
+    t.string   "arcana"
+    t.string   "athletics"
+    t.string   "deception"
+    t.string   "history"
+    t.string   "insight"
+    t.string   "intimidation"
+    t.string   "investigation"
+    t.string   "medicine"
+    t.string   "nature"
+    t.string   "perception"
+    t.string   "performance"
+    t.string   "persuasion"
+    t.string   "religion"
+    t.string   "sleight_hand"
+    t.string   "stealth"
+    t.string   "survival"
+    t.integer  "character_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "abilities", ["character_id"], name: "index_abilities_on_character_id", using: :btree
 
   create_table "adventures", force: :cascade do |t|
     t.string   "name"
@@ -76,6 +114,7 @@ ActiveRecord::Schema.define(version: 20160322130754) do
 
   add_index "dmasters", ["campaign_id"], name: "index_dmasters_on_campaign_id", using: :btree
 
+  add_foreign_key "abilities", "characters"
   add_foreign_key "adventures", "campaigns"
   add_foreign_key "characters", "campaigns"
   add_foreign_key "dmasters", "campaigns"
