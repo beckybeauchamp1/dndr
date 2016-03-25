@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :characters do
       resource :ability
+      resources :spells
     end
     resource :dmaster
     resources :adventures
