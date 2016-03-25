@@ -1,0 +1,13 @@
+<%= render "layouts/logo" %>
+<div id="back" class="emphasis"><%= link_to "Back to Character", campaign_character_path(@campaign, @character) %></div>
+
+<div><span class="emphasis">Name: </span><%= @spell.name %></div>
+<div><span class="emphasis">Level: </span><%= @spell.level %></div>
+<div><span class="emphasis">Casting Time: </span><%= @spell.casting_time %></div>
+<div><span class="emphasis">Range: </span><%= @spell.range %></div>
+<div><span class="emphasis">Components: </span><%= @spell.components %></div>
+<div><span class="emphasis">Duration: </span><%= @spell.duration %></div>
+<div><span class="emphasis">Description: </span><%= @spell.description %></div>
+<div><span class="emphasis">Notes: </span><%= @spell.notes %></div>
+
+<button class="makeButton"><%= link_to "Edit", edit_campaign_character_spell_path(@campaign, @character, @spell) %></button>
