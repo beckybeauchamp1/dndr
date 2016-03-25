@@ -1,7 +1,7 @@
 <%= render "layouts/logo" %>
 <div id="back" class="emphasis"><%= link_to "Back to Character", campaign_character_path(@campaign, @character) %></div>
 
-<div><span class="emphasis">Name: </span><%= @spell.name %></div>
+<h2><%= @spell.name %></h2>
 <div><span class="emphasis">Level: </span><%= @spell.level %></div>
 <div><span class="emphasis">Casting Time: </span><%= @spell.casting_time %></div>
 <div><span class="emphasis">Range: </span><%= @spell.range %></div>

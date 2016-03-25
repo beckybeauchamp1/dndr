@@ -74,11 +74,14 @@
 <% end %>
 
 <h2>Spells <%= link_to "(+)", new_campaign_character_spell_path( @campaign , @character) %></h2>
-<% @character.spells.each do |spell| %>
-    <h4 class="emphasis"><%= link_to "#{spell.name}", campaign_character_spell_path( @campaign, @character, spell ) %></h4>
-    <div><%= spell.description %></div>
-    <div><button class="makeButton"><%= link_to "Edit", edit_campaign_character_spell_path( @campaign, @character, spell ) %></button></div>
-    <div><%= form_for [@campaign, @character, spell], method: :delete do |f| %>
-      <%= f.submit "Delete", class: "delete" %>
-    <% end %></div>
-<% end %>
+<div class="campaigns">
+  <% @character.spells.each do |spell| %>
+    <div class="campItem"><h4 class="emphasis"><%= link_to "#{spell.name}", campaign_character_spell_path( @campaign, @character, spell ) %></h4>
+      <div><%= spell.description %></div>
+      <div><button class="makeButton"><%= link_to "Edit", edit_campaign_character_spell_path( @campaign, @character, spell ) %></button></div>
+      <div><%= form_for [@campaign, @character, spell], method: :delete do |f| %>
+        <%= f.submit "Delete", class: "delete" %>
+      <% end %></div>
+    </div>
+  <% end %>
+</div>
