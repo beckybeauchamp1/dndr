@@ -6,7 +6,6 @@ class CreateSpells < ActiveRecord::Migration
       t.string :casting_time
       t.string :range
       t.string :components
-      t.string :string
       t.string :duration
       t.string :description
       t.string :notes

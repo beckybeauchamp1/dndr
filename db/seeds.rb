@@ -3,6 +3,7 @@ Dmaster.destroy_all
 Campaign.destroy_all
 Adventure.destroy_all
 Ability.destroy_all
+Spell.destroy_all
 
 5.times do |index|
   campaign = Campaign.create!(name: Faker::Book.title,
