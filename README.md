@@ -27,12 +27,10 @@ Wouldn't it be so great if there was an app where you can create/share your "cam
 **If you fork/clone this repo, remember to `bundle install` and have PostgreSQL installed on your computer!**
 
 **Unsolved Problems:**
-* Full-Screen view on Heroku: it's better now, but when I view my app on Heroku in 'full-screen' it is not centered/does not take up the whole width of the page. It looks perfectly fine on my local server. I sent in a Heroku issue, and they told me that it is an issue with my CSS/app, not Heroku.
-* Campaign#show view conditional statement for header. If a user initially does not add a map image, a different styled header shows up. If a user later adds a map, the header is replaced with a map image and different styled header. HOWEVER, if a user later removes the map, it shows neither header option. I wanted the header to revert to the first styled 'no map' header version.
 * An "are you sure you want to delete this?" alert. Ideally, I would like a prompt window to show up if a user clicks the delete button. If the users types no in the prompt, it should prevent deletion. I could get the alert button to show up, but I couldn't prevent deletion.
 
 **Steps for the Future:**
 * Add a user component: This would actually be a complex relationship (a user can belong to many campaigns, and a user can have many characters among those campaigns).
 * Flash notifications when a user does not fill in a required field on a form.
-* A character has a ton of attributes: although many attributes are included in this version, I still haven't included skills, weapons, and spells.
-* More attributes for the DM, including a section to create 'Non-Player Characters' or NPCs.
+* A character has a ton of attributes: although many attributes are included in this version, I still haven't weapons and a section for notes.
+* More attributes for the DM, including notes and a section to create 'Non-Player Characters' or NPCs.
