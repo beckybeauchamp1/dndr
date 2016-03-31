@@ -47,4 +47,14 @@ class CharactersController < ApplicationController
     params.require(:character).permit(:player_name, :char_name, :klass, :level, :race, :background, :alignment, :archetype, :xp, :hp_max, :hp_current, :armor_class, :initiative, :speed, :prof_bonus, :inspiration, :languages, :features, :equipment, :personality, :ideals, :bonds, :flaws, :img_url)
   end
 
+  # You could do something similar here:
+  # because you use the following two lines throughout your enitre controller
+  # you could write the following:
+  # def set_campaign
+  #   @campaign = Campaign.find(params[:campaign_id])
+  # end
+  # then at top:
+  # before_action :set_campaign
+  # this is define @campaign before each restful action/method
+
 end

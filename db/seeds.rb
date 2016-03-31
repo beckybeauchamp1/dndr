@@ -1,3 +1,5 @@
+# Great job using Faker!
+
 Character.destroy_all
 Dmaster.destroy_all
 Campaign.destroy_all
@@ -46,6 +48,8 @@ Spell.destroy_all
     )
   end
 end
+
+# Loved that you print out this after running to seeds data, awesome!
 
 p "Created #{Campaign.count} campaigns, #{Dmaster.count} dungeon masters, #{Adventure.count} adventures, and #{Character.count} characters."
 

@@ -1,6 +1,6 @@
 <%= render "layouts/logo" %>
 <div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
-
+<!--As mentioned in dmasters edit.html.erb view, I would definitlely put this form into a partial then call render on it here and in new.html.erb -->
 <h2 id="title">Edit Character:</h2>
 <div class="container">
 <%= form_for [@campaign, @character] do |f| %>

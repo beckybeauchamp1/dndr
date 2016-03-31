@@ -1,44 +1,33 @@
 class AdventuresController < ApplicationController
+  before_action :set_campaign
+  before_action :set_adventure, only: [:show, :new, :edit, :update, :destroy]
   def index
-    @campaign = Campaign.find(params[:campaign_id])
     @adventures = @campaign.adventures.all.order(:id)
   end
 
   def show
-    @campaign = Campaign.find(params[:campaign_id])
-    @adventure = Adventure.find(params[:id])
   end
 
   def new
-    @campaign = Campaign.find(params[:campaign_id])
     @adventure = Adventure.new
   end
 
   def create
-    @campaign = Campaign.find(params[:campaign_id])
     @adventure = @campaign.adventures.create! adventure_params
 
     redirect_to campaign_adventure_path(@campaign, @adventure)
   end
 
   def edit
-    @campaign = Campaign.find(params[:campaign_id])
-    @adventure = Adventure.find(params[:id])
   end
 
   def update
-    @campaign = Campaign.find(params[:campaign_id])
-    @adventure = Adventure.find(params[:id])
     @adventure.update adventure_params
-
     redirect_to campaign_adventure_path(@campaign, @adventure)
   end
 
   def destroy
-    @campaign = Campaign.find(params[:campaign_id])
-    @adventure = Adventure.find(params[:id])
     @adventure.destroy
-
     redirect_to campaign_path(@campaign)
   end
 
@@ -46,5 +35,13 @@ class AdventuresController < ApplicationController
   def adventure_params
     params.require(:adventure).permit(:name, :summary, :img_url)
   end
-
+  # because you use the following two lines throughout your enitre controller
+  # you could write the following:
+  def set_campaign
+    @campaign = Campaign.find(params[:campaign_id])
+  end
+  def set_adventure
+    @adventure = Adventure.find(params[:id])
+  end
+  # then look at the before_action up top
 end

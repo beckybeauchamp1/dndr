@@ -1,6 +1,9 @@
 <%= render "layouts/logo" %>
 <div id="back" class="emphasis"><%= link_to "Back to Campaign", campaign_path(@campaign) %></div>
 <h2>Edit DM:</h2>
+<!--Since edit and new are almost identical, it would help clean up your code if you could put this in a partial instead -->
+<!--_form.html.erb  -->
+<!--then <%= render "form" %> here -->
 <%= form_for [@campaign, @dmaster] do |f| %>
   <div><%= f.label :name, "Name:" %></div>
   <div><%= f.text_field :name %></div>
